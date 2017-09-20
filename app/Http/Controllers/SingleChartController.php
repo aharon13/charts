@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\SingleChart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 
 class SingleChartController extends Controller

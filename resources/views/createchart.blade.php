@@ -3,10 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create your chart</div>
+                <div class="panel-heading">Dashboard</div>
+
                 <div class="panel-body">
+                    Create your chart
+                    <hr>
                     <div class="container">
                         <row>
                             <div class="col-sm-6 col-md-6 col-lg-6" style="background-color:white">
@@ -21,6 +24,5 @@
             </div>
         </div>
     </div>
-    
 </div>
 @endsection

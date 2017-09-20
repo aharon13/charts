@@ -20,6 +20,7 @@ class CreateMultichartsTable extends Migration
             $table->string('color');
             $table->string('icon');
             $table->string('data_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

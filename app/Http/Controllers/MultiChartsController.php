@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\MultiChart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Validation\Rules\In;
 
@@ -33,7 +34,8 @@ class MultiChartsController extends Controller
                     'percent' => Input::get('percent'.$i),
                     'color' => Input::get('color'.$i),
                     'icon' => Input::get('icon'.$i),
-                    'data_id' => $num
+                    'data_id' => $num,
+                    'user_id' => Auth::user()->getAuthIdentifier()
                 ];
             $validator = \Validator::make($data, [
                 'name' => 'required|max:191',

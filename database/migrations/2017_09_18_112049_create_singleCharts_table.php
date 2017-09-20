@@ -19,6 +19,7 @@ class CreateSingleChartsTable extends Migration
             $table->integer('percent');
             $table->string('color');
             $table->string('icon');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

@@ -9,6 +9,6 @@ class MultiChart extends Model
     public $timestamps = false;
 
     protected $table = 'multicharts';
-    protected $fillable = ['name','percent','color','icon','data_id'];
+    protected $fillable = ['name','percent','color','icon','data_id','user_id'];
     protected $primarykey = 'id';
 }

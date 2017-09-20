@@ -9,7 +9,7 @@ class SingleChart extends Model
     public $timestamps = false;
 
     protected $table = 'singlecharts';
-	protected $fillable = ['name','percent','color','icon'];
+	protected $fillable = ['name','percent','color','icon','user_id'];
     protected $primarykey = 'id';
 		
 

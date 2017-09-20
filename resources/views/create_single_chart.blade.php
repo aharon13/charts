@@ -30,6 +30,7 @@
                             <div class="col-lg-3"><b>Color</b><br><input type="color" name="color" placeholder="Color"></div>
                             <div class="col-lg-3"><b>Icon</b><br><input type="text" name="icon" placeholder="Icon"></div>
                         </div>
+                        <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
                         <div class="row">
                             <input type="submit" name="submit" value="Add Chart">
                         </div>
