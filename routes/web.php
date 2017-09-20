@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@firstPage');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/createchart', 'HomeController@createChart')->name('createchart');
+Route::get('/createSingleChart', 'SingleChartController@index')->name('createSinglechart');
+Route::post('/create-single-chart', 'SingleChartController@create')->name('addSingleChart');
+
+Route::get('/createMultiChart', 'MultiChartsController@index')->name('createMultichart');
+Route::post('/create-multi-chart', 'MultiChartsController@create')->name('addMultiChart');
