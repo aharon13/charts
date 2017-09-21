@@ -8,11 +8,8 @@
             <div class="col-lg-12">
                 <div class="text-center m-t-lg">
                     <h1>
-                        Welcome in INSPINIA Laravel Starter Project
+                        Last Created Charts
                     </h1>
-                    <small>
-                        It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects.
-                    </small>
                 </div>
             </div>
         </div>
@@ -20,26 +17,64 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-6" style="background-color:yellow;">
+            <div class="col-sm-12 col-md-6 col-lg-6">
                 @if($single)
-                    Name: {{$single->name}}<br>
-                    Percent: {{$single->percent}}<br>
-                    Color: {{$single->color}}<br>
-                    Icon: {{$single->icon}}<br>
+                   <?php 
+                        $num = $single->percent;
+                        $percent = ($single->percent / 200) * 100;
+                        if ($num > 100 && $num <=500) {
+                            $percent = ($single->percent / 500) * 100;
+                        }elseif ($num > 500 && $num <=1000) {
+                            $percent = ($single->percent / 1000) * 100;
+                        }
+
+                        $finalP = ((200 / 100) * $percent) ;
+                    ?>
+                <div class="chart-box">
+                    <div class="chart-item" style="background-color: {{$single->color}}; height: {{$finalP}}px">
+                        <div class="chart-value">
+                            <span>{{$single->percent}}</span>
+                        </div>
+                        <div class="chart-icon">
+                            <i class="fa {{$single->icon}}" style="font-size: 20px;color: #e5e5e5 "></i>
+                        </div>
+                    </div>
+                </div>
                 @else
                     {{"There are no single chart"}}
                 @endif
+                
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-6" style="background-color:pink;">
+            <div class="col-sm-12 col-md-6 col-lg-6">
                 @if($model)
+                 
                     @foreach($model as $m)
-                        Name: {{$m->name}}<br>
-                        Percent: {{$m->percent}}<br>
-                        Color: {{$m->color}}<br>
-                        Icon:{{$m->icon}}<br><br><br><br>
+                        <?php 
+                            $numM = $m->percent;
+                            $percentM = ($m->percent / 200) * 100;
+                            if ($numM > 100 && $numM <=500) {
+                                $percentM = ($m->percent / 500) * 100;
+                            }elseif ($numM > 500 && $numM <=1000) {
+                                $percentM = ($m->percent / 1000) * 100;
+                                
+                            }
+
+                            $finalPM = ((200 / 100) * $percentM) ;
+                        ?>
+                        <div class="chart-box">
+                            <div class="chart-item" style="background-color: {{$m->color}}; height: {{$finalPM}}px">
+                                <div class="chart-value">
+                                    <span>{{$m->percent}}</span>
+                                </div>
+                                <div class="chart-icon">
+                                    <i class="fa {{$m->icon}}" style="font-size: 20px;color: #e5e5e5 "></i>
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 @else
-                    {{"There are no multi chart"}}
+                 dd($model);
+                    <p>{{"There are no multi chart"}}</p>
                 @endif
             </div>
         </div>

@@ -13,31 +13,69 @@
             </div>
         </div>
     @endif
-<div class="container">
+<div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+        <div class="col-lg-12">
+            {!! Form::open(['url' => '/create-single-chart']) !!}
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input name="name" type="text" class="form-control required">
+                        </div>
+                        <div class="form-group">
+                            <label>Percent *</label>
+                            <input name="percent" type="text" class="form-control required">
+                        </div>
+                        <div class="form-group">
+                            <label>Color *</label>
+                            <input name="color" type="color" value="#ff0000" class="form-control required color-picker">
+                        </div>
+                        <div class="form-group">
+                            <label>Icon *</label>
+                            <div>
+                                <input type="text" class="icon-class-input form-control required" name="icon" value="fa fa-music" />
+                                <button type="button" class="btn btn-primary picker-button">Choose an Icon</button>
+                                <span class="demo-icon"></span>
+                            </div>
 
-                <div class="panel-body">
-                    Create your chart
-                    <hr>
-                    {!! Form::open(['url' => '/create-single-chart']) !!}
-                    <div class="panel">
-                        <div class="row" >
-                            <div class="col-lg-3"><b>Name</b><br><input type="text" name="name" placeholder="Name"></div>
-                            <div class="col-lg-3"><b>Percent</b><br><input type="text" name="percent" placeholder="Percent"></div>
-                            <div class="col-lg-3"><b>Color</b><br><input type="color" name="color" placeholder="Color"></div>
-                            <div class="col-lg-3"><b>Icon</b><br><input type="text" name="icon" placeholder="Icon"></div>
+                            <div id="iconPicker" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">Icon Picker</h4>
+                                        </div>
+                                        <div class="modal-body custom-modal-body">
+                                            <div>
+                                                <ul class="icon-picker-list">
+                                                    <li>
+                                                        <a data-class="item activeState" data-index="dindex">
+                                                            <span class="item"></span>
+                                                            <span class="name-class">item</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="change-icon" class="btn btn-success">
+                                                <span class="fa fa-check-circle-o"></span>
+                                                Use Selected Icon
+                                            </button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
-                        <div class="row">
-                            <input type="submit" name="submit" value="Add Chart">
+                        <div class="form-group">
+                            <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Create Chart</strong></button>
                         </div>
                     </div>
-                    {!! Form::close() !!}
                 </div>
-            </div>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
