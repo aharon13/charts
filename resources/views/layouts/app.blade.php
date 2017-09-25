@@ -44,6 +44,12 @@
 
 
 <script src="{!! asset('js/custom.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/jspdf.min.js') !!}" type="text/javascript"></script>
+
+<script src="{!! asset('js/html2canvas.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/canvas2image.min.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/base64.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/canvas2image.js') !!}" type="text/javascript"></script>
 
 @section('scripts')
 @show

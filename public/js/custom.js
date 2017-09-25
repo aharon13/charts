@@ -2,10 +2,24 @@ $(document).ready(function(){
 	$("#wizard").steps();
     $('a[href^="#next"]').on( "click", CreateChart);
     $('a[href^="#wizard-h-1"]').on( "click", CreateChart);
-});
 
+    $('#save').on("click", function(){
+    	$('#chart_form').submit();
+    });
+
+    $('.download_jpg').on("click", DownloadAs);
+
+
+});
+function DownloadAs(){
+	html2canvas($("#ch_b"), {
+	    onrendered: function (canvas) {
+	      Canvas2Image.saveAsPNG(canvas);
+	    }
+	});
+}
 function CreateChart(){
-	$(".ch_b").empty();
+	$("#ch_b").empty();
 
 	  var name = $(".ch_name").val();
 	  var percent = $(".ch_percent").val();
@@ -34,5 +48,5 @@ function CreateChart(){
 	  $ch_item.append($ch_value);
 	  $ch_item.append($ch_icon);
 	  $ch_box.append($ch_item);
-	  $(".ch_b").append($ch_box);
+	  $("#ch_b").append($ch_box);
 }

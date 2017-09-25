@@ -24,7 +24,7 @@
                     <h1>Create Chart</h1>
                     <div class="step-content">
                         <div class="text-center m-t-md">
-                            {!! Form::open(['url' => '/create-single-chart']) !!}
+                            {!! Form::open(['url' => '/create-single-chart', 'id' => 'chart_form']) !!}
                             <div class="row">
                                 <div class="col-lg-8">
                                     <div class="form-group">
@@ -86,13 +86,19 @@
 
                     <h1>Finish and Embed</h1>
                     <div class="step-content">
-                        <div class="text-center m-t-md ch_b">
+                        <div class="text-center m-t-md clearfix" id="ch_b">
                             
                         </div>
                         <div class="form-group">
-                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
-                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>Download</strong></button>
+                            <button id="save" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
+                            <div class="btn-group">
+                                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#" class="download_jpg">JPG</a></li>
+                                    <li><a href="#" class="download_pdf">PDF</a></li>
+                                </ul>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
