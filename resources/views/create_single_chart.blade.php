@@ -90,7 +90,8 @@
                             
                         </div>
                         <div class="form-group">
-                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>Create Chart</strong></button>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>Download</strong></button>
                             </div>
                     </div>
                 </div>
