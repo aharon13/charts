@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/custom_styles.css') !!}" />
+    
+    <link href="{!! asset('css/steps/jquery.steps.css') !!}" rel="stylesheet">
     <link rel="stylesheet" href="{!! asset('js/iconpicker/iconpicker.css') !!}" />
 </head>
 <body>
@@ -37,9 +39,11 @@
     </div>
     <!-- End wrapper-->
 <script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>
-<script src="{!! asset('js/custom.js') !!}" type="text/javascript"></script>
-
 <script src="{!! asset('js/iconpicker/iconpicker.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/steps/jquery.steps.min.js') !!}"></script>
+
+
+<script src="{!! asset('js/custom.js') !!}" type="text/javascript"></script>
 
 @section('scripts')
 @show

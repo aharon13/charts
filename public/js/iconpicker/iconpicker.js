@@ -33,9 +33,8 @@ $('.icon-class-input').each(function() {
 var iconInput = null;
 
 // Click function to set which input is being used
-$('.picker-button').click(function() {
-	// Sets var to which input is being updated
-	iconInput = $(this).siblings('.icon-class-input');
+$('body').on('click', '.picker-button', function() {
+    iconInput = $(this).siblings('.icon-class-input');
 	// Shows Bootstrap Modal
 	$('#iconPicker').modal('show');
 	// Sets active state by looping through the list with the previous class from the picker input
@@ -47,7 +46,7 @@ $('.picker-button').click(function() {
 });
 
 // Click function to select icon
-$(document).on('click', '.icon-picker-list a', function() {
+$('body').on('click', '.icon-picker-list a', function() {
 	// Sets selected icon
 	selectedIcon = $(this).data('index');
 
@@ -57,16 +56,15 @@ $(document).on('click', '.icon-picker-list a', function() {
 	$('.icon-picker-list a').eq(selectedIcon).addClass('active');
 });
 
-// Update icon input
-$('#change-icon').click(function() {
-	iconInput.val(icons[selectedIcon].icon);
+$('body').on('click', '#change-icon', function() {
+    iconInput.val(icons[selectedIcon].icon);
 	iconInput.siblings('.demo-icon').attr('class', 'demo-icon');
 	iconInput.siblings('.demo-icon').addClass(icons[selectedIcon].icon);
 	$('#iconPicker').modal('hide');
 	console.log(iconInput);
 	console.log(icons[selectedIcon].icon);
 });
-
+// Update icon input
 function findInObject(object, property, value) {
 	for (var i = 0; i < object.length; i += 1) {
 		if (object[i][property] === value) {
