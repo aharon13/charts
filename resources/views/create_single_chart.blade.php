@@ -24,25 +24,25 @@
                     <h1>Create Chart</h1>
                     <div class="step-content">
                         <div class="text-center m-t-md">
-                            {!! Form::open(['url' => '/create-single-chart', 'id' => 'chart_form']) !!}
+                            {!! Form::open(['url' => '/create-single-chart', 'id' => 'form']) !!}
                             <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="form-group">
+                                <div class="col-lg-8 text-left">
+                                    <div class="form-group col-lg-3">
                                         <label>Name *</label>
                                         <input name="name" type="text" class="form-control required ch_name">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-lg-3">
                                         <label>Percent *</label>
                                         <input name="percent" type="text" class="form-control required ch_percent">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-lg-3">
                                         <label>Color *</label>
                                         <input name="color" type="color" value="#ff0000" class="form-control required color-picker ch_color">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group col-lg-3">
                                         <label>Icon *</label>
                                         <div>
-                                            <input type="text" class="icon-class-input form-control required ch_icon" name="icon" value="fa fa-music" />
+                                            <input type="hidden" class="icon-class-input form-control required ch_icon" name="icon" value="fa fa-music" />
                                             <button type="button" class="btn btn-primary picker-button">Choose an Icon</button>
                                             <span class="demo-icon"></span>
                                         </div>
@@ -90,7 +90,7 @@
                             
                         </div>
                         <div class="form-group">
-                            <button id="save" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
+                            <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
                             <div class="btn-group">
                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
                                 <ul class="dropdown-menu">

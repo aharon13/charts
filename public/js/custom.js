@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('a[href^="#wizard-h-1"]').on( "click", CreateChart);
 
     $('#save').on("click", function(){
-    	$('#chart_form').submit();
+    	$('#form').submit();
     });
 
     $('.download_jpg').on("click", DownloadAs);
@@ -21,10 +21,12 @@ function DownloadAs(){
 function CreateChart(){
 	$("#ch_b").empty();
 
-	  var name = $(".ch_name").val();
-	  var percent = $(".ch_percent").val();
-	  var color = $(".ch_color").val();
-	  var icon = $(".ch_icon").val();
+	$('.xxxxx').each(function(){
+		
+		var name = $(this).find(".ch_name").val();
+		var percent = $(this).find(".ch_percent").val();
+		var color = $(this).find(".ch_color").val();
+		var icon = $(this).find(".ch_icon").val();
 
 		var	num = percent;
 	    var percentP = (percent / 200) * 100;
@@ -49,4 +51,6 @@ function CreateChart(){
 	  $ch_item.append($ch_icon);
 	  $ch_box.append($ch_item);
 	  $("#ch_b").append($ch_box);
+	});
+	 
 }
