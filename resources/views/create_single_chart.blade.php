@@ -25,7 +25,7 @@
                     <div class="step-content">
                         <div class="text-center m-t-md">
                             {!! Form::open(['url' => '/create-single-chart', 'id' => 'form']) !!}
-                            <div class="row">
+                            <div class="row xxxxx">
                                 <div class="col-lg-8 text-left">
                                     <div class="form-group col-lg-3">
                                         <label>Name *</label>
