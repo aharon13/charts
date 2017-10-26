@@ -30,8 +30,8 @@ var Canvas2Image = (function() {
 
 	// ok, we're good
 	var readCanvasData = function(oCanvas) {
-		var iWidth = parseInt(oCanvas.width);
-		var iHeight = parseInt(oCanvas.height);
+		var iWidth = parseInt(80);
+		var iHeight = parseInt(200);
 		return oCanvas.getContext("2d").getImageData(0,0,iWidth,iHeight);
 	}
 
@@ -186,7 +186,7 @@ var Canvas2Image = (function() {
 			if (bReturnImg) {
 				return makeImageObject(strData);
 			} else {
-				saveFile(strData.replace("image/png", strDownloadMime));
+				saveFile(strData);
 			}
 			return true;
 		},

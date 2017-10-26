@@ -21,14 +21,8 @@
                 @if($single)
                    <?php 
                         $num = $single->percent;
-                        $percent = ($single->percent / 200) * 100;
-                        if ($num > 100 && $num <=500) {
-                            $percent = ($single->percent / 500) * 100;
-                        }elseif ($num > 500 && $num <=1000) {
-                            $percent = ($single->percent / 1000) * 100;
-                        }
-
-                        $finalP = ((200 / 100) * $percent) ;
+                        
+                        $finalP = 2 * $num;
                     ?>
                 <div class="chart-box">
                     <div class="chart-item" style="background-color: {{$single->color}}; height: {{$finalP}}px">
@@ -51,15 +45,8 @@
                     @foreach($model as $m)
                         <?php 
                             $numM = $m->percent;
-                            $percentM = ($m->percent / 200) * 100;
-                            if ($numM > 100 && $numM <=500) {
-                                $percentM = ($m->percent / 500) * 100;
-                            }elseif ($numM > 500 && $numM <=1000) {
-                                $percentM = ($m->percent / 1000) * 100;
-                                
-                            }
-
-                            $finalPM = ((200 / 100) * $percentM) ;
+                            
+                            $finalPM = 2 * $percentM;
                         ?>
                         <div class="chart-box">
                             <div class="chart-item" style="background-color: {{$m->color}}; height: {{$finalPM}}px">

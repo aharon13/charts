@@ -96,17 +96,22 @@
                     </div>
 
                     <h1>Finish and Embed</h1>
+
                     <div class="step-content">
                         <div class="text-center m-t-md clearfix" id="ch_b">
                             
+                        </div>
+                        <div class="row">
+                            <input type="button" value="Embed code" id="embed_code">
+                            <textarea rows="10" cols="50" id="embed_code_area" placeholder="Press Embed Code and copy from here"></textarea>
                         </div>
                         <div class="form-group">
                             <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
                             <div class="btn-group">
                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" class="download_jpg">JPG</a></li>
-                                    <li><a href="#" class="download_pdf">PDF</a></li>
+                                    <li><a href="#" class="download_png">PNG</a></li>
+                                    <li><a href="#" class="download_jpeg">JPEG</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -139,35 +144,6 @@
         $cIcon.prop('name', 'icon'+num);
 
         $("#count_of_items").val(num);
-
-
-        // var f = document.getElementById("form");
-        // var number = document.getElementById('hiddenInput').value;
-        // number++;
-        // document.getElementById('hiddenInput').value = number;
-        // var n = document.createElement("input"); //input element, text
-        // n.setAttribute('type',"text");
-        // n.setAttribute('name',"name"+ number );
-
-        // var p = document.createElement("input"); //input element, Submit button
-        // p.setAttribute('name','percent' +number );
-
-        // var c = document.createElement("input"); //input element, Submit button
-        // c.setAttribute('type','color');
-        // c.setAttribute('name','color'+number);
-
-        // var i = document.createElement("input"); //input element, Submit button
-        // i.setAttribute('name','icon'+number);
-
-        // var br = document.createElement('br');
-
-        // f.appendChild(n);
-        // f.appendChild(p);
-        // f.appendChild(c);
-        // f.appendChild(i);
-        // f.appendChild(br);
-
-
     }
 
 </script>

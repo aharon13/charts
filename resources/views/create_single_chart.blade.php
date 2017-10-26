@@ -89,6 +89,10 @@
                         <div class="text-center m-t-md clearfix" id="ch_b">
                             
                         </div>
+                        <div class="row">
+                            <input type="button" value="Embed code" id="embed_code">
+                            <textarea rows="10" cols="50" id="embed_code_area" placeholder="Press Embed Code and copy from here"></textarea>
+                        </div>
                         <div class="form-group">
                             <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
                             <div class="btn-group">

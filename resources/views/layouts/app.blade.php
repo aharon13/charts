@@ -50,6 +50,8 @@
 <script src="{!! asset('js/canvas2image.min.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/base64.js') !!}" type="text/javascript"></script>
 <script src="{!! asset('js/canvas2image.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/FileSaver.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/canvas-toBlob.js') !!}" type="text/javascript"></script>
 
 @section('scripts')
 @show
