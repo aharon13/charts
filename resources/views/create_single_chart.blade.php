@@ -98,8 +98,8 @@
                             <div class="btn-group">
                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#" class="download_jpg">JPG</a></li>
-                                    <li><a href="#" class="download_pdf">PDF</a></li>
+                                    <li><a href="#" class="download_png">PNG</a></li>
+                                    <li><a href="#" class="download_jpeg">JPEG</a></li>
                                 </ul>
                             </div>
                         </div>
