@@ -60,7 +60,6 @@
                         </div>
                     @endforeach
                 @else
-                 dd($model);
                     <p>{{"There are no multi chart"}}</p>
                 @endif
             </div>
