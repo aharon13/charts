@@ -46,7 +46,7 @@
                         <?php 
                             $numM = $m->percent;
                             
-                            $finalPM = 2 * $percentM;
+                            $finalPM = 2 * $numM;
                         ?>
                         <div class="chart-box">
                             <div class="chart-item" style="background-color: {{$m->color}}; height: {{$finalPM}}px">
