@@ -98,7 +98,7 @@
                                         </div>
                                     </div> 
                                     <div class="form-group col-lg-12">
-                                        <input type="button"  class="btn btn-sm btn-danger pull-left remove" value="delete new row" onclick="divClear(this); return false;">
+                                        <input type="button"  class="remove btn btn-sm btn-danger pull-left" value="delete row" onclick="divClear(this); return false;">
                                     </div>
                                 </div>
 
@@ -180,10 +180,15 @@
 
         $("#count_of_items").val(num);
 
+        $(".remove").css("visibility", "visible");
+
 
     }
 
     function divClear(el){
+        if ($(".parent-element").length =2) {
+            $(".remove").css("visibility", "hidden");
+        }
         $(".ch_preview_area[data-action="+$(el).closest('.parent-element').data('action')+"]").remove();
         $(el).closest('.parent-element').remove();
     }
