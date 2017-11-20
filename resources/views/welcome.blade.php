@@ -22,7 +22,7 @@
                    <?php 
                         $num = $single->percent;
                         
-                        $finalP = 2 * $num;
+                        $finalP = 1.5 * $num;
                     ?>
                 <div class="chart-box">
                     <div class="chart-item" style="background-color: {{$single->color}}; height: {{$finalP}}px">
@@ -46,7 +46,7 @@
                         <?php 
                             $numM = $m->percent;
                             
-                            $finalPM = 2 * $numM;
+                            $finalPM = 1.5 * $numM;
                         ?>
                         <div class="chart-box">
                             <div class="chart-item" style="background-color: {{$m->color}}; height: {{$finalPM}}px">
