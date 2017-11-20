@@ -1,7 +1,8 @@
 $(document).ready(function(){
+
 	$("#wizard").steps();
-    $('a[href^="#next"]').on( "click", CreateChart);
-    $('a[href^="#wizard-h-1"]').on( "click", CreateChart);
+    // $('a[href^="#next"]').on( "click", CreateChart);
+    // $('a[href^="#wizard-h-1"]').on( "click", CreateChart);
 
     $('#save').on("click", function(){
     	$('#form').submit();
@@ -12,10 +13,27 @@ $(document).ready(function(){
 
     $("#embed_code").on("click", EmbedCode);
 
+    $('body').on('change', '.ch_percent', function(){
+    	var dataAction = $(this).data('action');
+    	// $(".chart-item").find("[data-action='" + dataAction + "']").css("height", $(".ch_percent").val() * 2 + "px");;
+    	$(".ch_preview_area[data-action="+dataAction+"]").find(".chart-item").css("height", $(this).val() * 1.5 + "px");
+    });
+
+    $('body').on('change', '.ch_color', function(){
+    	var dataAction = $(this).data('action');
+    	$(".ch_preview_area[data-action="+dataAction+"]").find(".chart-item").css("background-color", $(this).val());
+    });
+
+    
+	$('body').on('change', '.ch_name', function(){
+    	var dataAction = $(this).data('action');
+    	$(".ch_preview_area[data-action="+dataAction+"]").find(".ch_title").html($(this).val());
+    });
+
 
 });
 function DownloadAsPNG(){
-	html2canvas($("#ch_b"), {
+	html2canvas($(".all_ch_preview_area"), {
 	    onrendered: function (canvas) {
 	    	canvas.toBlob(function(blob) {
             	saveAs(blob, "chart.png");
@@ -24,7 +42,7 @@ function DownloadAsPNG(){
 	});
 }
 function DownloadAsJPEG(){
-	html2canvas($("#ch_b"), {
+	html2canvas($(".all_ch_preview_area"), {
 	    onrendered: function (canvas) {
 	    	canvas.toBlob(function(blob) {
             	saveAs(blob, "chart.jpeg");
@@ -32,38 +50,9 @@ function DownloadAsJPEG(){
 	    }
 	});
 }
-function CreateChart(){
-	$("#ch_b").empty();
-
-	$('.xxxxx').each(function(){
-		
-		var name = $(this).find(".ch_name").val();
-		var percent = $(this).find(".ch_percent").val();
-		var color = $(this).find(".ch_color").val();
-		var icon = $(this).find(".ch_icon").val();
-
-    	var finalP = 2*percent;
-
-	  var $ch_box = $("<div>", {"class":"chart-box"});
-	  var $ch_item = $("<div>", {"class":"chart-item", css:{"background-color": color, "height": finalP+"px"}});
-	  var $ch_value = $("<div>", {"class":"chart-value"});
-	  var $ch_value_text = $("<span>");
-	  $ch_value_text.html(percent);
-	  $ch_value.append($ch_value_text);
-	  var $ch_icon = $("<div>", {"class":"chart-icon"});
-	  var $ch_icon_value = $("<i>", {"class":"fa "+icon});
-	  $ch_icon.append($ch_icon_value);
-	  $ch_item.append($ch_value);
-	  $ch_item.append($ch_icon);
-	  $ch_box.append($ch_item);
-	  $("#ch_b").append($ch_box);
-	});
-
-	$("#ch_b").css("width", $(".xxxxx").length * 90+"px");	 
-}
 
 function EmbedCode(){
-	html2canvas($("#ch_b"), {
+	html2canvas($(".all_ch_preview_area"), {
 	    onrendered: function (canvas) {
 	    	var dataURL = canvas.toDataURL("image/png");
 	    	$("#embed_code_area").val("<img src='"+dataURL+"'/>");

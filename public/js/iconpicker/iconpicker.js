@@ -31,9 +31,10 @@ $('.icon-class-input').each(function() {
 
 // To be set to which input needs updating
 var iconInput = null;
-
+var dataAction = 0;
 // Click function to set which input is being used
 $('body').on('click', '.picker-button', function() {
+	dataAction = $(this).data('action');
     iconInput = $(this).siblings('.icon-class-input');
 	// Shows Bootstrap Modal
 	$('#iconPicker').modal('show');
@@ -60,6 +61,8 @@ $('body').on('click', '#change-icon', function() {
     iconInput.val(icons[selectedIcon].icon);
 	iconInput.siblings('.demo-icon').attr('class', 'demo-icon');
 	iconInput.siblings('.demo-icon').addClass(icons[selectedIcon].icon);
+	$(".ch_preview_area[data-action="+dataAction+"]").find(".ch_icon_o").attr('class', 'ch_icon_o');
+	$(".ch_preview_area[data-action="+dataAction+"]").find(".ch_icon_o").addClass(icons[selectedIcon].icon);
 	$('#iconPicker').modal('hide');
 	console.log(iconInput);
 	console.log(icons[selectedIcon].icon);

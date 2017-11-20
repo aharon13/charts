@@ -20,8 +20,15 @@
                     CH
                 </div>
             </li>
-            <li class="{{ isActiveRoute('main') }}">
-                <a href="{{ url('/') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
+            <li class="{{ isActiveRoute('') }} ">
+                <a href="#"><i class="fa fa-pencil"></i> <span class="nav-label">Create Chart</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li><a href="{{ url('/') }}">My Charts</a></li>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
             </li>
             <li class="{{ isActiveRoute('createchart') }}">
                 <a href="{{ url('/createchart') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Create Chart</span> </a>

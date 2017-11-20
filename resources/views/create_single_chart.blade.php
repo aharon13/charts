@@ -20,30 +20,49 @@
                 <p>
                     Chart Creation Process
                 </p>
+                <div class="all_ch_preview_area">
+                    <div class="ch_title_area">
+                        <span class="ch_template_title">Template1</span>
+                    </div>
+                    <div class="ch_preview_area" data-action="0">
+                        <div class="chart-box">
+                            <div class="chart-item" data-action="0" style="background-color: rgb(255, 0, 0); height: 0px;">
+                                <div class="chart-value"><span></span></div>
+                                <div class="chart-icon">
+                                    <i class="ch_icon_o fa fa-music" data-action="0"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ch_title_area">
+                            <span class="ch_title" data-action="0">Title</span>
+                        </div>
+                    </div>
+                </div>
+                
                 <div id="wizard">
                     <h1>Create Chart</h1>
                     <div class="step-content">
                         <div class="text-center m-t-md">
                             {!! Form::open(['url' => '/create-single-chart', 'id' => 'form']) !!}
                             <div class="row xxxxx">
-                                <div class="col-lg-8 text-left">
+                                <div class="row col-lg-8 text-left">
                                     <div class="form-group col-lg-3">
-                                        <label>Name *</label>
-                                        <input name="name" type="text" class="form-control required ch_name">
+                                        <label>Title *</label>
+                                        <input name="name" type="text" class="form-control required ch_name" data-action="0">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <label>Percent *</label>
-                                        <input name="percent" type="text" class="form-control required ch_percent">
+                                        <input name="percent" type="text" class="form-control required ch_percent" data-action="0">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <label>Color *</label>
-                                        <input name="color" type="color" value="#ff0000" class="form-control required color-picker ch_color">
+                                        <input name="color" type="color" value="#ff0000" class="form-control required color-picker ch_color" data-action="0">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <label>Icon *</label>
                                         <div>
-                                            <input type="hidden" class="icon-class-input form-control required ch_icon" name="icon" value="fa fa-music" />
-                                            <button type="button" class="btn btn-primary picker-button">Choose an Icon</button>
+                                            <input type="hidden" class="icon-class-input form-control required ch_icon" name="icon" value="fa fa-music"/>
+                                            <button type="button" data-action="0" class="btn btn-primary picker-button">Choose an Icon</button>
                                             <span class="demo-icon"></span>
                                         </div>
 
@@ -86,15 +105,13 @@
 
                     <h1>Finish and Embed</h1>
                     <div class="step-content">
-                        <div class="text-center m-t-md clearfix" id="ch_b">
-                            
-                        </div>
                         <div class="row">
-                            <input type="button" value="Embed code" id="embed_code">
-                            <textarea rows="10" cols="50" id="embed_code_area" placeholder="Press Embed Code and copy from here"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
+                            <div class="col-lg-6">
+                                <textarea rows="2" cols="50" id="embed_code_area" placeholder="Press Embed Code and copy from here"></textarea>
+                                <input type="button" value="Embed code" id="embed_code">
+                            </div>
+                            <div class="col-lg-6">
+                                <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
                             <div class="btn-group">
                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
                                 <ul class="dropdown-menu">
@@ -102,8 +119,8 @@
                                     <li><a href="#" class="download_jpeg">JPEG</a></li>
                                 </ul>
                             </div>
+                            </div>
                         </div>
-                        <div class="row" style="height: 60px"></div>
                     </div>
                 </div>
             </div>

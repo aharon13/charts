@@ -22,30 +22,48 @@
                 <p>
                     Chart Creation Process
                 </p>
+                <div class="all_ch_preview_area">
+                    <div class="ch_title_area">
+                            <span class="ch_template_title">Template1</span>
+                    </div>
+                    <div class="ch_preview_area" data-action="1">
+                        <div class="chart-box">
+                            <div class="chart-item" data-action="1" style="background-color: rgb(255, 0, 0); height: 0px;">
+                                <div class="chart-value"><span></span></div>
+                                <div class="chart-icon">
+                                    <i class="ch_icon_o fa fa-music" data-action="0"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ch_title_area">
+                            <span class="ch_title" data-action="0">Title</span>
+                        </div>
+                    </div>
+                </div>
                 <div id="wizard">
                     <h1>Create Chart</h1>
                     <div class="step-content">
                         <div class="text-center m-t-md">
                             {!! Form::open(['url' => '/create-multi-chart','id' =>'form']) !!}
                             <div class="row xxxxx" id="row_1">
-                                <div class="col-lg-8 text-left">
+                                <div class="row col-lg-8 text-left parent-element" data-action="1">
                                     <div class="form-group col-lg-3">
-                                        <label>Name *</label>
-                                        <input name="name1" type="text" class="form-control required ch_name">
+                                        <label>Title *</label>
+                                        <input name="name1" type="text" class="form-control required ch_name" data-action="1">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <label>Percent *</label>
-                                        <input name="percent1" type="text" class="form-control required ch_percent">
+                                        <input name="percent1" type="text" class="form-control required ch_percent" data-action="1">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <label>Color *</label>
-                                        <input name="color1" type="color" value="#ff0000" class="form-control required color-picker ch_color">
+                                        <input name="color1" type="color" value="#ff0000" class="form-control required color-picker ch_color" data-action="1">
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <label>Icon *</label>
                                         <div>
                                             <input type="hidden" class="icon-class-input form-control required ch_icon" name="icon1" value="fa fa-music" />
-                                            <button type="button" class="btn btn-primary picker-button">Choose an Icon</button>
+                                            <button type="button" data-action="1" class="btn btn-primary picker-button">Choose an Icon</button>
                                             <span class="demo-icon"></span>
                                         </div>
 
@@ -79,7 +97,11 @@
                                             </div>
                                         </div>
                                     </div> 
+                                    <div class="form-group col-lg-12">
+                                        <input type="button"  class="btn btn-sm btn-danger pull-left remove" value="delete new row" onclick="divClear(this); return false;">
+                                    </div>
                                 </div>
+
                             </div>
                             <div class="row">
                                 <div class="form-group col-lg-12">
@@ -98,15 +120,13 @@
                     <h1>Finish and Embed</h1>
 
                     <div class="step-content">
-                        <div class="text-center m-t-md clearfix" id="ch_b">
-                            
-                        </div>
                         <div class="row">
-                            <input type="button" value="Embed code" id="embed_code">
-                            <textarea rows="10" cols="50" id="embed_code_area" placeholder="Press Embed Code and copy from here"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
+                            <div class="col-lg-6">
+                                <textarea rows="2" cols="50" id="embed_code_area" placeholder="Press Embed Code and copy from here"></textarea>
+                                <input type="button" value="Embed code" id="embed_code">
+                            </div>
+                            <div class="col-lg-6">
+                                <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
                             <div class="btn-group">
                                 <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
                                 <ul class="dropdown-menu">
@@ -114,8 +134,8 @@
                                     <li><a href="#" class="download_jpeg">JPEG</a></li>
                                 </ul>
                             </div>
+                            </div>
                         </div>
-                        <div class="row" style="height: 60px"></div>
                     </div>
                 </div>
             </div>
@@ -126,26 +146,48 @@
 <script>
     function divClone() {
 
-        var $div = $('div[id^="row_"]:last');
-        var num = parseInt( $div.prop("id").match(/\d+/g), 10 ) +1;
-        var $klon = $div.clone().prop('id', 'row_'+num );
+        var chart = $('.ch_preview_area:last');
+        var num = parseInt( $(chart).data("action")) +1;
+        var klonArea = chart.clone();
 
-        $div.after( $klon );
+        $(klonArea).attr('data-action', num );
+
+        chart.after( klonArea );
+
+
+        var actionPanel = $('.parent-element:last');
+        var klonPanel = actionPanel.clone();
+
+        $(klonPanel).attr('data-action', num );
+
+        actionPanel.after(klonPanel);
 
         var $cName = $('.ch_name').last();
         $cName.prop('name', 'name'+num);
+        $cName.attr('data-action', num );
 
         var $cPercent = $('.ch_percent').last();
         $cPercent.prop('name', 'percent'+num);
+        $cPercent.attr('data-action', num );
 
         var $cColor = $('.ch_color').last();
         $cColor.prop('name', 'color'+num);
+        $cColor.attr('data-action', num );
 
         var $cIcon = $('.ch_icon').last();
         $cIcon.prop('name', 'icon'+num);
+        $cIcon.next().attr('data-action', num );
 
         $("#count_of_items").val(num);
+
+
     }
 
+    function divClear(el){
+        $(".ch_preview_area[data-action="+$(el).closest('.parent-element').data('action')+"]").remove();
+        $(el).closest('.parent-element').remove();
+    }
+
+    
 </script>
 @endsection
