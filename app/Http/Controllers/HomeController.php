@@ -37,13 +37,11 @@ class HomeController extends Controller
         $single_color = SingleChart::get()->pluck('color')->first();
         $single_icon = SingleChart::get()->pluck('icon')->first();
 
-        $single = \DB::table('singlecharts')->where('user_id','=',Auth::user()->getAuthIdentifier()) ->orderBy('id', 'desc')->first();
+        $single_all = \DB::table('singlecharts')->where('user_id','=',Auth::user()->getAuthIdentifier()) ->orderBy('id', 'desc')->get();
 
-        $lastnum = \DB::table('multicharts') ->orderBy('id', 'desc')->first()->data_id;
-
-        $model = MultiChart::where([['data_id','=',$lastnum],['user_id','=',Auth::user()->getAuthIdentifier()]])->get();
-
-        return view('welcome',compact('single','single_name','single_percent','single_color','single_icon','model'));
+        $model_all =MultiChart::where('user_id',Auth::id())->get()->groupBy('data_id')->toArray();
+        
+        return view('welcome',compact('single_all','single_name','single_percent','single_color','single_icon','model_all'));
     }
 
     public function createChart()
