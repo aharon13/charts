@@ -27,7 +27,7 @@ $(document).ready(function(){
     
 	$('body').on('change', '.ch_name', function(){
     	var dataAction = $(this).data('action');
-    	$(".ch_preview_area[data-action="+dataAction+"]").find(".ch_title").html($(this).val());
+    	$(".ch_preview_area[data-action="+dataAction+"]").find(".ch_name_f").html($(this).val());
     });
 
 

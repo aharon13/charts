@@ -35,12 +35,14 @@ class MultiChartsController extends Controller
                     'color' => Input::get('color'.$i),
                     'icon' => Input::get('icon'.$i),
                     'data_id' => $num,
+                    'title' => Input::get('title'.$i),
                     'user_id' => Auth::user()->getAuthIdentifier()
                 ];
             $validator = \Validator::make($data, [
                 'name' => 'required|max:191',
                 'percent' => 'required|numeric',
                 'color' => 'required|max:191',
+                'title' => 'required|max:191',
                 'icon' => 'required'
             ]);
             if ($validator->fails()) {

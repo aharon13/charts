@@ -19,7 +19,8 @@ class SingleChartController extends Controller
             'name' => 'required|max:191',
             'percent' => 'required|numeric',
             'color' => 'required|max:191',
-            'icon' => 'required'
+            'icon' => 'required',
+            'title' => 'required|max:191'
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator->errors());

@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <div class="ch_title_area">
-                            <span class="ch_title" data-action="0">Title</span>
+                            <span class="ch_name_f" data-action="0">Title</span>
                         </div>
                     </div>
                 </div>
@@ -48,6 +48,10 @@
                                 <div class="row col-lg-8 text-left">
                                     <div class="form-group col-lg-3">
                                         <label>Title *</label>
+                                        <input name="title" type="text" class="form-control required ch_title" data-action="0">
+                                    </div>
+                                    <div class="form-group col-lg-3">
+                                        <label>Name *</label>
                                         <input name="name" type="text" class="form-control required ch_name" data-action="0">
                                     </div>
                                     <div class="form-group col-lg-3">
