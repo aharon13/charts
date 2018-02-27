@@ -27,6 +27,7 @@
                     ?>
                         <div class="col-lg-12 chart-collection">
                             <div class="chart-box">
+                                {{$single->title}}
                                 <div class="chart-item" style="background-color: {{$single->color}}; height: {{$finalP}}px">
                                     <div class="chart-value">
                                         <span>{{$single->percent}}</span>
