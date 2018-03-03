@@ -74,6 +74,16 @@ h3, h4, h5 {
   border: 0;
 }
 
+.nav > li.active {
+    border-left: 4px solid #FFFF00 !important;
+    background: #C4004F !important;
+}
+
+.nav > li > a{
+  color: #FFFFFF !important;
+}
+
+
 .navbar-default {
   background-color: transparent;
   border-color: #2F4050;
@@ -191,10 +201,8 @@ h3, h4, h5 {
   font-size: 12px;
 }
 
-.nav-header {
-  padding: 33px 25px;
-  background-color: #2F4050;
-  background-image: url("patterns/header-profile.png");
+#wrapper{
+  background: #FF0066 !important;
 }
 
 .pace-done .nav-header {
@@ -209,6 +217,15 @@ ul.nav-second-level {
 .nav > li.active {
   border-left: 4px solid #19aa8d;
   background: #293846;
+}
+
+.navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
+    background-color: #46293d;
+    color: white;
+}
+
+.nav-header {
+  padding: 33px 25px;
 }
 
 .nav.nav-second-level > li.active {

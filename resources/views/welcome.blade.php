@@ -3,19 +3,104 @@
 @section('title', 'Main page')
 
 @section('content')
+    <div class="row wrapper border-bottom white-bg page-heading">
+        <div class="col-lg-10">
+            <h2>E-commerce grid</h2>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a>E-commerce</a>
+                </li>
+                <li class="active">
+                    <strong>Products grid</strong>
+                </li>
+            </ol>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+    </div>
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="text-center m-t-lg">
-                    <h1>
-                        Last Created Charts
-                    </h1>
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                $10
+                            </span>
+                            <small class="text-muted">Category</small>
+                            <a href="#" class="product-name"> Product</a>
+
+
+
+                            <div class="small m-t-xs">
+                                Many desktop publishing packages and web page editors now.
+                            </div>
+                            <div class="m-t text-righ">
+
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fas fa-long-arrow-alt-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+
+                        <div class="product-imitation">
+                            [ INFO ]
+                        </div>
+                        <div class="product-desc">
+                            <span class="product-price">
+                                $10
+                            </span>
+                            <small class="text-muted">Category</small>
+                            <a href="#" class="product-name"> Product</a>
+
+
+
+                            <div class="small m-t-xs">
+                                Many desktop publishing packages and web page editors now.
+                            </div>
+                            <div class="m-t text-center">
+
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">View <i class="fas fa-long-arrow-alt-right"></i> </a>
+                                <a href="#" class="btn btn-xs btn-outline btn-primary">Edit <i class="fas fa-pencil-alt"></i> </a>
+                                <a href="#" class="btn btn-xs btn-outline btn-danger">Delete <i class="fas fa-times"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-content product-box">
+
+                        <div class="product-imitation">
+                            <h2>This is looking
+                            <p><strong style="font-size: 34px;">empty</strong></p></h2>
+                            <br/>
+                        </div>
+                        <div class="product-desc">
+                            <div class="m-t text-center">
+                                <a href="#" class="btn btn-xs btn-success">Create a New Thing Chart </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6">
                 @if($single_all)
@@ -78,5 +163,5 @@
                 @endif
             </div>
         </div>
-    </div>
+    </div> -->
 @endsection

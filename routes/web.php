@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@firstPage');
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/createchart', 'HomeController@createChart')->name('createchart');
+Route::get('/welcome', 'WelcomeController@firstPage')->name('welcome');
+Route::get('/createchart', 'WelcomeController@createChart')->name('createchart');
 Route::get('/createSingleChart', 'SingleChartController@index')->name('createSinglechart');
 Route::post('/create-single-chart', 'SingleChartController@create')->name('addSingleChart');
 
