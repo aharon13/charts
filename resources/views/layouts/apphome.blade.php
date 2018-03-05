@@ -8,12 +8,12 @@
     <title>INSPINIA - Landing Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{!! Html::style('public/home_landing/css/bootstrap.min.css') !!}">
+    <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">
 
     <!-- Animation CSS -->
-    <link rel="stylesheet" href="{!! Html::style('public/home_landing/css/animate.min.css') !!}">
+    <link href="{!! asset('css/animate.min.css') !!}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{!! Html::style('public/home_landing/font-awesome/css/font-awesome.min.css') !!}">
+    <link href="{!! asset('css/font-awesome.min.css') !!}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{!! Html::style('public/home_landing/css/style.css') !!}">
+    <link href="{!! asset('css/style.css') !!}" rel="stylesheet">
     
 </head>
 <body id="page-top">
@@ -34,13 +34,13 @@
     @include('layouts.footerhome')
 
 <!-- <script src="{!! asset('js/custom.js') !!}" type="text/javascript"></script> -->
-<script src="{!! Html::script('public/home_landing/js/jquery-2.1.1.js') !!}" type="text/javascript"></script>
-<script src="{!! Html::script('public/home_landing/js/pace.min.js') !!}"></script>
-<script src="{!! Html::script('public/home_landing/js/bootstrap.min.js') !!}"></script>
-<script src="{!! Html::script('public/home_landing/js/classie.js') !!}"></script>
-<script src="{!! Html::script('public/home_landing/js/cbpAnimatedHeader.js') !!}"></script>
-<script src="{!! Html::script('public/home_landing/js/wow.min.js') !!}"></script>
-<script src="{!! Html::script('public/home_landing/js/inspinia.js') !!}"></script>
+<script src="{!! asset('js/jquery-2.1.1.js') !!}" type="text/javascript"></script>
+<script src="{!! asset('js/pace.min.js') !!}"></script>
+<script src="{!! asset('js/bootstrap.min.js') !!}"></script>
+<script src="{!! asset('js/classie.js') !!}"></script>
+<script src="{!! asset('js/cbpAnimatedHeader.js') !!}"></script>
+<script src="{!! asset('js/wow.min.js') !!}"></script>
+<script src="{!! asset('js/inspinia.js') !!}"></script>
 
 @section('scripts')
 @show
