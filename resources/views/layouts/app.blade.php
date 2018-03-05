@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="{!! asset('css/vendor.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
     <link rel="stylesheet" href="{!! asset('css/custom_styles.css') !!}" />
-    <link rel="stylesheet" href="{!! asset('css/fontawesome-all.css') !!}" />
-    
+    <!-- <link rel="stylesheet" href="{!! asset('css/fontawesome-all.css') !!}" /> -->
+
     <link href="{!! asset('css/steps/jquery.steps.css') !!}" rel="stylesheet">
     <link rel="stylesheet" href="{!! asset('js/iconpicker/iconpicker.css') !!}" />
 </head>
