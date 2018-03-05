@@ -8,7 +8,7 @@
     <title>INSPINIA - Landing Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{!! Html::style('public/home_landing/css/bootstrap.min.css') !!}" rel="stylesheet">
+    <link rel="stylesheet" href="{!! Html::style('public/home_landing/css/bootstrap.min.css') !!}">
 
     <!-- Animation CSS -->
     <link href="{!! Html::style('public/home_landing/css/animate.min.css') !!}" rel="stylesheet">
