@@ -37,7 +37,7 @@
                             Many desktop publishing packages and web page editors now.
                         </div>
                         <div class="m-t text-righ">
-                            <a href="/createSingleChart" class="btn btn-xs btn-outline btn-primary">Create<i class="fas fa-pencil-alt"></i></a>
+                            <a href="/createSingleChart" class="btn btn-xs btn-outline btn-primary">Create<i class="fa fa-pencil"></i></a>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                             Many desktop publishing packages and web page editors now.
                         </div>
                         <div class="m-t text-righ">
-                            <a href="createMultiChart" class="btn btn-xs btn-outline btn-primary">Create<i class="fas fa-pencil-alt"></i> </a>
+                            <a href="createMultiChart" class="btn btn-xs btn-outline btn-primary">Create<i class="fa fa-pencil"></i> </a>
                         </div>
                     </div>
                 </div>
