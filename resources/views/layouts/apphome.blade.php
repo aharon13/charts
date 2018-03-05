@@ -8,12 +8,12 @@
     <title>INSPINIA - Landing Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{!! HTML::style('public/home_landing/css/bootstrap.min.css') !!}" rel="stylesheet">
+    <link href="{!! Html::style('public/home_landing/css/bootstrap.min.css') !!}" rel="stylesheet">
 
     <!-- Animation CSS -->
-    <link href="{!! HTML::style('public/home_landing/css/animate.min.css') !!}" rel="stylesheet">
+    <link href="{!! Html::style('public/home_landing/css/animate.min.css') !!}" rel="stylesheet">
 
-    <link href="{!! HTML::style('public/home_landing/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
+    <link href="{!! Html::style('public/home_landing/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="{!! HTML::style('public/home_landing/css/style.css') !!}" rel="stylesheet">
+    <link href="{!! Html::style('public/home_landing/css/style.css') !!}" rel="stylesheet">
     
 </head>
 <body id="page-top">
