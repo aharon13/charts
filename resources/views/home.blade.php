@@ -98,7 +98,7 @@
             </div>
         </div>
         <div class="col-md-6 text-center  wow zoomIn">
-            <img src="../css/img/perspective.png'" alt="dashboard" class="img-responsive">
+            <img src="../css/img/perspective.png" alt="dashboard" class="img-responsive">
         </div>
         <div class="col-md-3 text-center wow fadeInRight">
             <div>
