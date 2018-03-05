@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-sm-4 wow fadeInLeft">
                 <div class="team-member">
-                    <img src="../css/img/avatar3.png" class="img-responsive img-circle img-small" alt="">
+                    <img src="../css/img/avatar3.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Amelia</span> Smith</h4>
                     <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus. </p>
                     <ul class="list-inline social-icon">
@@ -160,7 +160,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member wow zoomIn">
-                    <img src="../css/img/avatar1.png" class="img-responsive img-circle" alt="">
+                    <img src="../css/img/avatar1.jpg" class="img-responsive img-circle" alt="">
                     <h4><span class="navy">John</span> Novak</h4>
                     <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
                     <ul class="list-inline social-icon">
@@ -175,7 +175,7 @@
             </div>
             <div class="col-sm-4 wow fadeInRight">
                 <div class="team-member">
-                    <img src="../css/img/avatar2.png" class="img-responsive img-circle img-small" alt="">
+                    <img src="../css/img/avatar2.jpg" class="img-responsive img-circle img-small" alt="">
                     <h4><span class="navy">Peter</span> Johnson</h4>
                     <p>Lorem ipsum dolor sit amet, illum fastidii dissentias quo ne. Sea ne sint animal iisque, nam an soluta sensibus.</p>
                     <ul class="list-inline social-icon">
