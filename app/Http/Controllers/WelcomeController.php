@@ -29,7 +29,7 @@ class WelcomeController extends Controller
 
         $single_all = \DB::table('singlecharts')->where('user_id','=',Auth::user()->getAuthIdentifier()) ->orderBy('id', 'desc')->get();
 
-        $model_all =MultiChart::where('user_id',Auth::id())->get()->groupBy('data_id')->toArray();
+        $model_all =MultiChart::where('user_id',Auth::id())->orderBy('id', 'desc')->get()->groupBy('data_id')->toArray();
         
         return view('welcome',compact('single_all','single_name','single_percent','single_color','single_icon','model_all'));
     }

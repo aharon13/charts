@@ -109,3 +109,26 @@
 .chart-collection{
     margin-bottom: 10px;
 }
+
+.chart-title-form{
+    width: 260px;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    height: 250px;
+}
+
+.insp-description{
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-name{
+    height: 22px;
+}
+
+.form-delete-button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

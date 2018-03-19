@@ -8,13 +8,10 @@
             <h2>E-commerce grid</h2>
             <ol class="breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a>E-commerce</a>
+                    <a href="/">Home</a>
                 </li>
                 <li class="active">
-                    <strong>Products grid</strong>
+                    <strong>My Charts Gallery</strong>
                 </li>
             </ol>
         </div>
@@ -40,7 +37,7 @@
 
 
 
-                            <div class="small m-t-xs">
+                            <div class="small m-t-xs insp-description">
                                 Many desktop publishing packages and web page editors now.
                             </div>
                             <div class="m-t text-righ">
@@ -51,6 +48,80 @@
                     </div>
                 </div>
             </div>
+            <?php
+                foreach ($single_all as $single) {
+                    $num = $single->percent;
+                    $finalP = 1.5 * $num;
+            ?>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> {{$single->title}}</a>
+                                <div class="small m-t-xs insp-description">
+                                    {{$single->description}}
+                                </div>
+                                <div class="m-t text-center">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary pull-left">View <i class="fa fa-long-arrow-right"></i> </a>
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Edit <i class="fa fa-pencil"></i> </a>
+                                    <!-- <a href="SingleChart/{{ $single->id }}" data-method="destroy" data-token="{{csrf_token()}}" data-confirm="Are you sure?">hhhhh</a> -->
+                                    <a href="#" class="btn btn-xs btn-outline btn-danger pull-right" style="visibility: hidden;">Delete <i class="fa fa-times"></i> </a>
+                                    {{ Form::open([ 'method'  => 'DELETE', 'route' => [ 'SingleChart.destroy', $single->id ] ]) }}
+                                    {{ Form::hidden('id', $single->id) }}
+                                    {{ Form::button('Delete <i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'btn btn-xs btn-outline btn-danger pull-right form-delete-button')) }}
+                                    {{ Form::close() }}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                }
+            ?>
+            <?php
+                foreach($model_all as $model){
+                    $r = $model[0];
+
+            ?>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name">{{$r['title']}}</a>
+                                <div class="small m-t-xs insp-description">
+                                    {{$r['description']}}
+                                </div>
+                                <div class="m-t text-center">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary pull-left">View <i class="fa fa-long-arrow-right"></i> </a>
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Edit <i class="fa fa-pencil"></i> </a>
+                                    <!-- <a href="SingleChart/{{ $single->id }}" data-method="destroy" data-token="{{csrf_token()}}" data-confirm="Are you sure?">hhhhh</a> -->
+                                    <a href="#" class="btn btn-xs btn-outline btn-danger pull-right" style="visibility: hidden;">Delete <i class="fa fa-times"></i> </a>
+                                    {{ Form::open([ 'method'  => 'DELETE', 'route' => [ 'MultiCharts.destroy', $r['data_id'] ] ]) }}
+                                    {{ Form::hidden('id', $r['data_id']) }}
+                                    {{ Form::button('Delete <i class="fa fa-times"></i>', array('type' => 'submit', 'class' => 'btn btn-xs btn-outline btn-danger pull-right form-delete-button')) }}
+                                    {{ Form::close() }}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                }
+            ?>
             <div class="col-md-3">
                 <div class="ibox">
                     <div class="ibox-content product-box">
@@ -72,9 +143,9 @@
                             </div>
                             <div class="m-t text-center">
 
-                                <a href="#" class="btn btn-xs btn-outline btn-primary">View <i class="fa fa-long-arrow-right"></i> </a>
+                                <a href="#" class="btn btn-xs btn-outline btn-primary pull-left">View <i class="fa fa-long-arrow-right"></i> </a>
                                 <a href="#" class="btn btn-xs btn-outline btn-primary">Edit <i class="fa fa-pencil"></i> </a>
-                                <a href="#" class="btn btn-xs btn-outline btn-danger">Delete <i class="fa fa-times"></i> </a>
+                                <a href="#" class="btn btn-xs btn-outline btn-danger pull-right">Delete <i class="fa fa-times"></i> </a>
                             </div>
                         </div>
                     </div>
@@ -91,7 +162,7 @@
                         </div>
                         <div class="product-desc">
                             <div class="m-t text-center">
-                                <a href="#" class="btn btn-xs btn-success">Create a New Thing Chart </a>
+                                <a href="{{ url('/createchart') }}" class="btn btn-xs btn-success">Create a New Thing Chart </a>
                             </div>
                         </div>
                     </div>
@@ -103,14 +174,16 @@
     <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6">
-                @if($single_all)
+                @if($single_all) -->
 
                    <?php
                        foreach ($single_all as $single) {
                            $num = $single->percent;
                            $finalP = 1.5 * $num;
+                       }
                     ?>
-                        <div class="col-lg-12 chart-collection">
+                    
+                        <!--<div class="col-lg-12 chart-collection">
                             <div class="chart-box">
                                 {{$single->title}}
                                 <div class="chart-item" style="background-color: {{$single->color}}; height: {{$finalP}}px">
@@ -124,7 +197,7 @@
                             </div>
                         </div>
                     <?php
-                       }
+                      // }
                     ?>
 
                 @else

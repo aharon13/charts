@@ -28,7 +28,27 @@ $(document).ready(function(){
 	$('body').on('change', '.ch_name', function(){
     	var dataAction = $(this).data('action');
     	$(".ch_preview_area[data-action="+dataAction+"]").find(".ch_name_f").html($(this).val());
+	});
+	
+	$('body').on('change', '.ch_title', function(){
+    	$(".ch_template_title").html($(this).val());
+	});
+	
+	$('body').on('change', '.ch_title_m', function(){
+		$(".ch_template_title").html($(this).val());
+		var t = $(this).val()
+		$('.ch_title_hidden').each(function(){
+			$(this).val(t);
+		 })
+	});
+	
+	$('body').on('change', '.ch_descrition_m', function(){
+		var t = $(this).val()
+		$('.ch_desc_hidden').each(function(){
+			$(this).val(t);
+		 })
     });
+
 
 
 });

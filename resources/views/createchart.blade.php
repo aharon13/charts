@@ -7,13 +7,10 @@
         <h2>E-commerce grid</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a>E-commerce</a>
+                <a href="/">Home</a>
             </li>
             <li class="active">
-                <strong>Products grid</strong>
+                <strong>Create Thing Chart</strong>
             </li>
         </ol>
     </div>

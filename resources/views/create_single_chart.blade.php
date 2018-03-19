@@ -13,43 +13,73 @@
             </div>
         </div>
     @endif
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>E-commerce grid</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="{{ url('/createchart') }}">Create Thing Chart</a>
+            </li>
+            <li class="active">
+                <strong>Single Thing Chart</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox-content">
-                <p>
-                    Chart Creation Process
-                </p>
-                <div class="all_ch_preview_area">
-                    <div class="ch_title_area">
-                        <span class="ch_template_title">Template1</span>
+            {!! Form::open(['url' => '/create-single-chart', 'id' => 'form']) !!}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-title-form">
+                            <div class="form-group">
+                                <label>Title of Chart:</label> 
+                                <input name="title" type="text" class="form-control required ch_title">
+                            </div>
+                            <div class="form-group">
+                                <label>Short Description (Max 140 chars)</label> 
+                                <input name="description" type="text" class="form-control required">
+                            </div>
+                        </div>
+                        
                     </div>
-                    <div class="ch_preview_area" data-action="0">
-                        <div class="chart-box">
-                            <div class="chart-item" data-action="0" style="background-color: rgb(255, 0, 0); height: 0px;">
-                                <div class="chart-value"><span></span></div>
-                                <div class="chart-icon">
-                                    <i class="ch_icon_o fa fa-music" data-action="0"></i>
+                    <div class="col-md-6">
+                        <div class="all_ch_preview_area">
+                            <div class="ch_title_area">
+                                <span class="ch_template_title">Template1</span>
+                            </div>
+                            <div class="ch_preview_area" data-action="0">
+                                <div class="chart-box">
+                                    <div class="chart-item" data-action="0" style="background-color: rgb(255, 0, 0); height: 0px;">
+                                        <div class="chart-value"><span></span></div>
+                                        <div class="chart-icon">
+                                            <i class="ch_icon_o fa fa-music" data-action="0"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ch_title_area">
+                                    <span class="ch_name_f" data-action="0">Name</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="ch_title_area">
-                            <span class="ch_name_f" data-action="0">Title</span>
-                        </div>
                     </div>
-                </div>
-                
+                </div>               
                 <div id="wizard">
                     <h1>Create Chart</h1>
                     <div class="step-content">
                         <div class="text-center m-t-md">
-                            {!! Form::open(['url' => '/create-single-chart', 'id' => 'form']) !!}
+                            
                             <div class="row xxxxx">
                                 <div class="row col-lg-8 text-left">
-                                    <div class="form-group col-lg-3">
-                                        <label>Title *</label>
-                                        <input name="title" type="text" class="form-control required ch_title" data-action="0">
-                                    </div>
                                     <div class="form-group col-lg-3">
                                         <label>Name *</label>
                                         <input name="name" type="text" class="form-control required ch_name" data-action="0">
@@ -103,7 +133,6 @@
                                     <input type="hidden" name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
                                 </div>
                             </div>
-                        {!! Form::close() !!}
                         </div>
                     </div>
 
@@ -127,6 +156,7 @@
                         </div>
                     </div>
                 </div>
+            {!! Form::close() !!}
             </div>
         </div>
     </div>

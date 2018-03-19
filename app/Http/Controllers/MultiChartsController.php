@@ -36,6 +36,7 @@ class MultiChartsController extends Controller
                     'icon' => Input::get('icon'.$i),
                     'data_id' => $num,
                     'title' => Input::get('title'.$i),
+                    'description' => Input::get('description'.$i),
                     'user_id' => Auth::user()->getAuthIdentifier()
                 ];
             $validator = \Validator::make($data, [
@@ -43,7 +44,8 @@ class MultiChartsController extends Controller
                 'percent' => 'required|numeric',
                 'color' => 'required|max:191',
                 'title' => 'required|max:191',
-                'icon' => 'required'
+                'icon' => 'required',
+                'description' => 'required'
             ]);
             if ($validator->fails()) {
                 return redirect()->back()->withInput()->withErrors($validator->errors());
@@ -107,6 +109,9 @@ class MultiChartsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = MultiChart::where([['user_id','=',Auth::id()],['data_id','=',$id]]);
+        $item->delete();
+
+        return redirect()->back()->with('message','Deleted!');
     }
 }

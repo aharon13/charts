@@ -20,7 +20,8 @@ class SingleChartController extends Controller
             'percent' => 'required|numeric',
             'color' => 'required|max:191',
             'icon' => 'required',
-            'title' => 'required|max:191'
+            'title' => 'required|max:191',
+            'description' => 'required|max:191',
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator->errors());
@@ -30,6 +31,12 @@ class SingleChartController extends Controller
         return redirect()->back();
     }
 
+    public function destroy($id)
+    {
+        $item = SingleChart::where([['user_id','=',Auth::id()],['id','=',$id]]);
+        $item->delete();
 
+        return redirect()->back()->with('message','Deleted!');
+    }
 
 }
