@@ -16,7 +16,7 @@
 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>E-commerce grid</h2>
+        <h2>My Charts Gallery</h2>
         <ol class="breadcrumb">
             <li>
                 <a href="/">Home</a>
@@ -195,11 +195,11 @@
         $cName.attr('data-action', num );
 
         var $cTitle = $('.ch_title_hidden').last();
-        $cTitle.prop('name', 'name'+num);
+        $cTitle.prop('name', 'title'+num);
         $cTitle.attr('data-action', num );
 
         var $cDesc = $('.ch_desc_hidden').last();
-        $cDesc.prop('name', 'name'+num);
+        $cDesc.prop('name', 'description'+num);
         $cDesc.attr('data-action', num );
 
         var $cPercent = $('.ch_percent').last();
