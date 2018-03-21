@@ -6,10 +6,19 @@ $(document).ready(function(){
 		var acronym = matches.join('');
 		$(".user-name").text(acronym);
 	}
+	var settings = {
+		labels: {
+			current: "current step:",
+			finish: "Save and create new",
+			next: "Next",
+		}
+	};
+	$("#wizard").steps(settings);
 
-	$("#wizard").steps();
     // $('a[href^="#next"]').on( "click", CreateChart);
-    // $('a[href^="#wizard-h-1"]').on( "click", CreateChart);
+     $('a[href^="#finish"]').on( "click", function(){
+    	$('#form').submit();
+    });
 
     $('#save').on("click", function(){
     	$('#form').submit();

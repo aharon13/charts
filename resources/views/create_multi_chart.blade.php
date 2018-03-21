@@ -52,21 +52,24 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="all_ch_preview_area">
-                            <div class="ch_title_area">
-                                    <span class="ch_template_title">Template1</span>
-                            </div>
-                            <div class="ch_preview_area" data-action="1">
-                                <div class="chart-box">
-                                    <div class="chart-item" data-action="1" style="background-color: rgb(255, 0, 0); height: 0px;">
-                                        <div class="chart-value"><span></span></div>
-                                        <div class="chart-icon">
-                                            <i class="ch_icon_o fa fa-music" data-action="0"></i>
+                        <div class="preview_main_area">
+                            <span class="text-center">Preview</span>
+                            <div class="all_ch_preview_area">
+                                <div class="ch_title_area">
+                                        <span class="ch_template_title">Template1</span>
+                                </div>
+                                <div class="ch_preview_area" data-action="1">
+                                    <div class="chart-box">
+                                        <div class="chart-item" data-action="1" style="background-color: rgb(255, 0, 0); height: 0px;">
+                                            <div class="chart-value"><span></span></div>
+                                            <div class="chart-icon">
+                                                <i class="ch_icon_o fa fa-music" data-action="0"></i>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="ch_title_area">
-                                    <span class="ch_title" data-action="0">Title</span>
+                                    <div class="ch_title_area">
+                                        <span class="ch_title" data-action="0">Title</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +156,7 @@
                                 <input type="button" value="Embed code" id="embed_code">
                             </div>
                             <div class="col-lg-6">
-                                <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button>
+                                <!-- <button id="save" class="btn btn-sm btn-success pull-right m-t-n-xs" type="button"><strong>Save</strong></button> -->
                                 <div class="btn-group">
                                     <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Download as <span class="fa fa-download"></span></button>
                                     <ul class="dropdown-menu">

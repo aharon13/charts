@@ -21,11 +21,11 @@
                 </div>
             </li>
 
-            <li class="{{ isActiveRoute('welcome') }}">
-                <a href="{{ url('/welcome') }}"><i class="fa fa-pie-chart"></i> <span class="nav-label">My Charts Gallery</span> </a>
-            </li>
             <li class="<?php echo( isActiveRoute('createchart')); echo(isActiveRoute('createSinglechart')); echo(isActiveRoute('createMultichart')); ?>">
                 <a href="{{ url('/createchart') }}"><i class="fa fa-pencil"></i> <span class="nav-label">Create Thing Chart</span> </a>
+            </li>
+            <li class="{{ isActiveRoute('welcome') }}">
+                <a href="{{ url('/welcome') }}"><i class="fa fa-pie-chart"></i> <span class="nav-label">My Charts Gallery</span> </a>
             </li>
             <li class="{{ isActiveRoute('t') }}">
                 <a href="{{ url('/createchart') }}"><i class="fa fa-book"></i> <span class="nav-label">Tutorials</span> </a>
