@@ -6,7 +6,7 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">
+                                <strong class="font-bold user-name">
                                     @if (Auth::guest())
                                         <a href="{{ route('login') }}">Login</a>
                                     @else

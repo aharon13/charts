@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+	var u_name = $(".user-name").text();
+	if(u_name != "Login"){
+		var matches = u_name.match(/\b(\w)/g);
+		var acronym = matches.join('');
+		$(".user-name").text(acronym);
+	}
+
 	$("#wizard").steps();
     // $('a[href^="#next"]').on( "click", CreateChart);
     // $('a[href^="#wizard-h-1"]').on( "click", CreateChart);
